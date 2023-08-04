@@ -15,7 +15,7 @@ class SiborgUtilsRetargetExtension(omni.ext.IExt):
         # Add an automap to the retarget manager for VICON data
         global ext_path
         ext_path = omni.kit.app.get_app().get_extension_manager().get_extension_path(ext_id)
-        rig_path = os.path.join(ext_path, "data", "rigs", "Karin")
+        rig_path = os.path.join(ext_path, "data", "rigs", "Rebecca")
         load_auto_map(rig_path, False)
 
     def on_shutdown(self):
