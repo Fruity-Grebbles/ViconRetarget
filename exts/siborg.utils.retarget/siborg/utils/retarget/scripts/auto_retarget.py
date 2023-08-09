@@ -27,10 +27,11 @@ def retarget_stage(stage: Usd.Stage, rigname='Biped', use_mapping=True, auto_fac
 
 def retarget_file(filename):
     """Sets up retargeting for the first skeleton in the given USD file"""
-    if filename.endswith('.usd') or filename.endswith('.usda'):
-        stage = open_usd_file(filename)
-        retarget_stage(stage)
-    raise ValueError(f'{filename} is not a USD file - skipping')
+    if not (filename.endswith('.usd') or filename.endswith('.usda')):
+        raise ValueError(f'{filename} is not a USD file - skipping')
+    stage = open_usd_file(filename)
+    retarget_stage(stage)
+
 
 
 def retarget_all(path):
