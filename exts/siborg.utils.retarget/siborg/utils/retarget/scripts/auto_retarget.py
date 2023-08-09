@@ -1,7 +1,8 @@
 # Utility to add retargeting to animated skeletons in USD.
 # Must be run inside omniverse kit eg `kit.exe --exec auto_retarget.py <args>`
 
-from pxr import Usd, UsdSkel, Sdf, AnimationSkelBindingAPI
+from pxr import Usd, UsdSkel, Sdf
+from pxr.RetargetingSchema import AnimationSkelBindingAPI
 import omni
 from omni.anim.retarget.core import load_auto_map, auto_setup_by_prim
 
