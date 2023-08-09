@@ -50,3 +50,6 @@ if __name__ == '__main__':
             fix_all(args.input)
         else:
             raise RuntimeError('Input path is not a directory')
+    else:
+        fix(args.input)
+
