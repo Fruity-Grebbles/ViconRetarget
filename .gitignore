@@ -8,6 +8,7 @@ _*/
 *.py[cod]
 
 /.vs
+*.code-workspace
 
 /app
 
