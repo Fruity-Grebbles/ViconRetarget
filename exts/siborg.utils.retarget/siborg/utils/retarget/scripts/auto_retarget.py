@@ -1,11 +1,10 @@
 # Utility to add retargeting to animated skeletons in USD.
 # Must be run inside omniverse kit eg `kit.exe --exec auto_retarget.py <args>`
 
-from pxr import Usd, UsdSkel, Sdf
+from pxr import Usd, UsdSkel, Sdf, UsdUtils
 from pxr.RetargetingSchema import AnimationSkelBindingAPI
 import omni
 from omni.anim.retarget.core import load_auto_map, auto_setup_by_prim
-
 
 
 def retarget_stage(stage: Usd.Stage, rigname='Biped', use_mapping=True, auto_facing=True, auto_tagging=False, auto_posing=True):
@@ -14,9 +13,14 @@ def retarget_stage(stage: Usd.Stage, rigname='Biped', use_mapping=True, auto_fac
     ensure_default_prim(stage)
 
     if skeleton := get_skeleton_in_stage(stage):
+        # Load stage into cache
+        UsdUtils.StageCache.Get().Insert(stage)
         print(f'Setting up retargeting for {skeleton.GetPath()}')
         auto_setup_by_prim(rigname, skeleton, use_mapping, auto_facing, auto_tagging, auto_posing)
+        # Bind animations
+        bind_animations(skeleton)
         stage.Save()
+        UsdUtils.StageCache.Get().Erase(stage)
     else:
         raise RuntimeError(f'No skeleton found in stage for {stage} Unable to set up retargeting')
 
