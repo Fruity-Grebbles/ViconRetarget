@@ -68,7 +68,7 @@ def get_skeleton_in_stage(stage):
 
 def ensure_default_prim(stage: Usd.Stage) -> Sdf.Path:
     """Ensures the stage has a default prim. If not, sets the first skeleton as the default prim"""
-    if not stage.HasDefaultPrim:
+    if not stage.GetDefaultPrim():
         if skeleton := get_skeleton_in_stage(stage):
             stage.SetDefaultPrim(skeleton)
             stage.Save()
