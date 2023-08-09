@@ -7,7 +7,7 @@ import omni
 from omni.anim.retarget.core import load_auto_map, auto_setup_by_prim
 
 
-def retarget_stage(stage: Usd.Stage, rigname='Biped', use_mapping=True, auto_facing=True, auto_tagging=False, auto_posing=True):
+def retarget_stage(stage: Usd.Stage, rigname='Biped', use_mapping=True, auto_facing=True, auto_tagging=True, auto_posing=False):
     """Sets up the first skeleton in the given USD file for animation retargeting"""
 
     ensure_default_prim(stage)
