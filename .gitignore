@@ -16,3 +16,4 @@ _*/
 
 exts/siborg.utils.retarget/data/*
 !exts/siborg.utils.retarget/data/rigs/
+!exts/siborg.utils.retarget/data/anim_preview.usd
