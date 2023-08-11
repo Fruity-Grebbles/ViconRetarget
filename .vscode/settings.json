@@ -8,6 +8,7 @@
     "python.analysis.extraPaths": [
         "${workspaceFolder}/exts/siborg.utils.retarget",
         "${workspaceFolder}/app/kit/exts/omni.kit.pip_archive/pip_prebundle",
+        "${workspaceFolder}/app/extscache/omni.kit.viewport.stage_preview-1.0.5",
         "${workspaceFolder}/app/kit/kernel/py",
         "${workspaceFolder}/app/kit/plugins/bindings-python",
         "${workspaceFolder}/app/extscache/carb.audio-0.1.0+ed961c5c.wx64.r.cp310",
