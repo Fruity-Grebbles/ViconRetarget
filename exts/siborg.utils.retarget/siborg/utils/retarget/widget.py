@@ -17,12 +17,6 @@ class AnimationPreviewWidget:
             *ui_args, **ui_kw_args: Additional arguments to pass to the ViewportWidget's parent frame
         """
 
-        # Open a USD stage and get the skeleton to apply animations to
-        ext_path = get_ext_path()
-        # Open the USD stage and get the skeleton to apply animations to
-        self.usd_context = omni.usd.get_context(context_name)
-        self.usd_context.open_stage(os.path.join(ext_path, "data", "anim_preview.usd"))
-
         self.skel_path = Sdf.Path("/World/Karin")
         self.camera_path = Sdf.Path("/World/Camera")
 
